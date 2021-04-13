@@ -1,5 +1,6 @@
 package nextstep.helloworld.mvc.exceptions;
 
+import java.io.IOException;
 import nextstep.helloworld.mvc.exceptions.exception.CustomException;
 import nextstep.helloworld.mvc.exceptions.exception.HelloException;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +23,7 @@ public class ExceptionsController {
         throw new HelloException();
     }
 
+    @ExceptionHandler(CustomException.class)
     public ResponseEntity<String> handle() {
         return ResponseEntity.badRequest().body("CustomException");
     }
