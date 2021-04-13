@@ -50,6 +50,13 @@ public class QueryingDaoTest {
     }
 
     @Test
+    void getFirstName() {
+        List<Customer> customers = queryingDAO.findCustomerByFirstName("Josh");
+
+        assertThat(customers).hasSize(2);
+    }
+
+    @Test
     void findCustomerById() {
         Customer customer = queryingDAO.findCustomerById(1L);
 
