@@ -50,7 +50,6 @@ public class UpdatingDaoTest {
     @Test
     void delete() {
         int rowNum = updatingDAO.delete(1L);
-
         assertThat(rowNum).isEqualTo(1);
     }
 
@@ -58,7 +57,6 @@ public class UpdatingDaoTest {
     void key() {
         Customer customer = new Customer("Leonor", "Watling");
         Long id = updatingDAO.insertWithKeyHolder(customer);
-
         assertThat(id).isNotNull();
     }
 }
