@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.Map;
 import nextstep.helloworld.jdbc.Customer;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
@@ -22,7 +23,8 @@ public class NamedParamDAO {
      */
     public int useMapSqlParameterSource(String firstName) {
         String sql = "select count(*) from customers where first_name = :first_name";
-        Map<String, String> namedParameters = Collections.singletonMap("first_name", firstName);
+//        Map<String, String> namedParameters = Collections.singletonMap("first_name", firstName);
+        SqlParameterSource namedParameters = new MapSqlParameterSource("first_name", firstName);
         return namedParameterJdbcTemplate.queryForObject(sql, namedParameters, Integer.class);
     }
 
