@@ -11,7 +11,7 @@ public class AuthService {
     private static final String EMAIL = "email@email.com";
     private static final String PASSWORD = "1234";
 
-    private JwtTokenProvider jwtTokenProvider;
+    private final JwtTokenProvider jwtTokenProvider;
 
     public AuthService(JwtTokenProvider jwtTokenProvider) {
         this.jwtTokenProvider = jwtTokenProvider;
