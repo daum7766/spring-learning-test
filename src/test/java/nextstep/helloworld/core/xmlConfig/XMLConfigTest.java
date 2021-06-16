@@ -7,7 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import java.util.Arrays;
 
 /**
- * application-config.xml로 등록한 빈을 검증하는 학습 테스트
+ * application-config.xml 로 등록한 빈을 검증하는 학습 테스트
  * 추가로 작성할 코드는 없습니다.
  */
 class XMLConfigTest {

@@ -12,11 +12,11 @@ import java.util.Arrays;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * HelloApplication에 설정된 @SpringBootApplication을 통해 애플리케이션의 모든 빈들을 이용한 테스트
+ * HelloApplication 에 설정된 @SpringBootApplication 을 통해 애플리케이션의 모든 빈들을 이용한 테스트
  * <p>
- * AuthenticationPrincipalConfig을 이용하여
- * AuthenticationPrincipalArgumentResolver를 빈 등록하고
- * AuthService에 대한 의존성을 주입하기
+ * AuthenticationPrincipalConfig 을 이용하여
+ * AuthenticationPrincipalArgumentResolver 를 빈 등록하고
+ * AuthService 에 대한 의존성을 주입하기
  */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
 class JavaConfigSpringTest {

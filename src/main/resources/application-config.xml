@@ -8,4 +8,5 @@
     <bean id="userService" class="nextstep.helloworld.core.xmlConfig.UserService">
         <property name="userRepository" ref="userRepository"/>
     </bean>
+
 </beans>

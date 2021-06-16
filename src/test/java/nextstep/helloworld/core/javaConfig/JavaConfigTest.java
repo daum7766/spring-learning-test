@@ -10,9 +10,9 @@ import java.util.Arrays;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * AnnotationConfigApplicationContext을 통해 AuthenticationPrincipalConfig에 설정된 빈들을 이용한 테스트
+ * AnnotationConfigApplicationContext 을 통해 AuthenticationPrincipalConfig 에 설정된 빈들을 이용한 테스트
  * <p>
- * AuthenticationPrincipalConfig을 이용하여
+ * AuthenticationPrincipalConfig 을 이용하여
  * AuthService 빈 등록하기
  */
 class JavaConfigTest {

@@ -1,7 +1,8 @@
 package nextstep.helloworld.core.javaConfig;
 
 public class AuthenticationPrincipalArgumentResolver {
-    private AuthService authService;
+
+    private final AuthService authService;
 
     public AuthenticationPrincipalArgumentResolver(AuthService authService) {
         this.authService = authService;
