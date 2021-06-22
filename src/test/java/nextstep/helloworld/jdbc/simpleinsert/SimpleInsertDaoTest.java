@@ -1,5 +1,8 @@
 package nextstep.helloworld.jdbc.simpleinsert;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
+import java.util.stream.Stream;
 import nextstep.helloworld.jdbc.Customer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -24,7 +27,7 @@ public class SimpleInsertDaoTest {
         jdbcTemplate.execute("CREATE TABLE customers(" +
                 "id SERIAL, first_name VARCHAR(255), last_name VARCHAR(255))");
 
-        List<Object[]> splitUpNames = Arrays.asList("John Woo", "Jeff Dean", "Josh Bloch", "Josh Long").stream()
+        List<Object[]> splitUpNames = Stream.of("John Woo", "Jeff Dean", "Josh Bloch", "Josh Long")
                 .map(name -> name.split(" "))
                 .collect(Collectors.toList());
 
@@ -34,12 +37,20 @@ public class SimpleInsertDaoTest {
     @Test
     void insertWithMap() {
         Customer customer = new Customer("Leonor", "Watling");
-        simpleInsertDao.insertWithMap(customer);
+        Customer customer1 = simpleInsertDao.insertWithMap(customer);
+
+        assertThat(customer1.getId()).isNotNull();
+        assertThat(customer1.getFirstName()).isEqualTo(customer.getFirstName());
+        assertThat(customer1.getLastName()).isEqualTo(customer.getLastName());
     }
 
     @Test
     void insertWithBeanPropertySqlParameterSource() {
         Customer customer = new Customer("Leonor", "Watling");
-        simpleInsertDao.insertWithBeanPropertySqlParameterSource(customer);
+        Customer customer1 = simpleInsertDao.insertWithBeanPropertySqlParameterSource(customer);
+
+        assertThat(customer1.getId()).isNotNull();
+        assertThat(customer1.getFirstName()).isEqualTo(customer.getFirstName());
+        assertThat(customer1.getLastName()).isEqualTo(customer.getLastName());
     }
 }

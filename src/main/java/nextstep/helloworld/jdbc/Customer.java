@@ -2,7 +2,8 @@ package nextstep.helloworld.jdbc;
 
 public class Customer {
     private long id;
-    private String firstName, lastName;
+    private final String firstName;
+    private final String lastName;
 
     public Customer(String firstName, String lastName) {
         this.firstName = firstName;
